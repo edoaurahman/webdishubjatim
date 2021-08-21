@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Images;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -30,8 +31,11 @@ class AdminController extends Controller
     }
     public function superadmin()
     {
+        $images = Images::all();
         if (session()->has('username')) {
-            return view('admin.admin_index');
+            return view('admin.admin_index',[
+                'image' => $images
+            ]);
         }else{
         return view('admin.login',[
             'title' => 'Login Form'
