@@ -19,6 +19,7 @@
           <!-- Login Form -->
           <form action="{{ route('postlogin') }}" method="post">
             {{ csrf_field() }}
+            @csrf
             <input type="text" id="login" class="fadeIn second" name="username" placeholder="Username">
             <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
             <input type="submit" class="fadeIn fourth" value="Log In">
