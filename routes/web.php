@@ -18,3 +18,5 @@ use App\Http\Controllers\AdminController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/admin', [AdminController::class, 'login'])->name('login');
 Route::post('/postlogin', [AdminController::class, 'postlogin'])->name('postlogin');
+Route::get('/superadmin', [AdminController::class, 'superadmin'])->name('superadmin');
+Route::get('/logout', [AdminController::class, 'logout']);

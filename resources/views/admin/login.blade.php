@@ -4,7 +4,10 @@
     <link rel="stylesheet" href="template/assets/css/login.css">
 </head>
 <body>
-  
+    <?php 
+    session_start();
+    
+    ?>
     <div class="wrapper fadeInDown">
         <div id="formContent">
           <!-- Tabs Titles -->
