@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row">
             <div class="col-lg-6 order-1 order-lg-2">
-              <img style="width: 500px" src="{{ asset('template') }}/assets/img/sampul-depan.jpg" class="img-fluid" alt="">
+              <img style="height: 500px;" src="{{ asset('template') }}/assets/img/sampul-depan.jpg" class="img-fluid" alt="">
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
                 <div class="ratio ratio-16x9">
