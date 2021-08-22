@@ -22,3 +22,4 @@ Route::post('/postlogin', [AdminController::class, 'postlogin'])->name('postlogi
 Route::get('/superadmin', [AdminController::class, 'superadmin'])->name('superadmin');
 Route::get('/logout', [AdminController::class, 'logout']);
 Route::put('/superadmin/{id}', [AdminController::class, 'update']);
+Route::get('/superadmin/header-slide', [AdminController::class,'header_slide']);

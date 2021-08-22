@@ -35,7 +35,8 @@ class AdminController extends Controller
         $images = Images::find(1);
         if (session()->has('username')) {
             return view('admin.admin_index', [
-                'image' => $images
+                'image' => $images,
+                'logout' =>'logout',
             ]);
         } else {
             return view('admin.login', [
@@ -89,7 +90,21 @@ class AdminController extends Controller
             $slide->slide3 = $filename;
         }
         $slide->save();
-        return redirect()->back()->with('status', 'Slide Image Update Successfully');
+        return redirect('superadmin/header-slide')->with('status', 'Slide Image Update Successfully');
 
+    }
+    public function header_slide()
+    {
+        $images = Images::find(1);
+        if (session()->has('username')) {
+            return view('admin.header_edit', [
+                'image' => $images,
+                'logout' =>'logout',
+            ]);
+        } else {
+            return view('admin.login', [
+                'title' => 'Login Form'
+            ]);
+        }
     }
 }

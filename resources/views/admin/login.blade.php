@@ -27,6 +27,7 @@
             <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
             <input type="submit" class="fadeIn fourth" value="Log In">
           </form>     
+          {{-- <a href="{{ url('/') }}" class="back">Back</a> --}}
         </div>
       </div>
 
