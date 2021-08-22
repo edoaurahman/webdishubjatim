@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Dinas Perhubungan Provinsi Jawa Timur')
+@section('title', 'Halaman Admin')
 @section('content')
 <?php
     $curl = curl_init();
