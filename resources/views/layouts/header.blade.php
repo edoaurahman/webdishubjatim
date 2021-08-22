@@ -1,12 +1,12 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero">
-    <div id="heroCarousel" data-bs-interval="4000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
       <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
       <div class="carousel-inner" role="listbox">
         <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url({{ asset('template') }}/assets/img/slide/{{ $image[0]->filename }})">
+        <div class="carousel-item active" style="background-image: url({{ asset('template') }}/assets/img/slide/{{ $image->slide1 }})">
           <div class="carousel-container">
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Selamat Datang Di <span>Web Dinas Perhubungan Jatim</span></h2>
@@ -14,10 +14,10 @@
           </div>
         </div>
         <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url({{ asset('template') }}/assets/img/slide/{{ $image[1]->filename }})"></div>
+        <div class="carousel-item" style="background-image: url({{ asset('template') }}/assets/img/slide/{{ $image->slide2 }})"></div>
 
         <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url({{ asset('template') }}/assets/img/slide/{{ $image[2]->filename }})"></div>
+        <div class="carousel-item" style="background-image: url({{ asset('template') }}/assets/img/slide/{{ $image->slide3 }})"></div>
       </div>
 
       <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">

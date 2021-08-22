@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ Route::get('/admin', [AdminController::class, 'login'])->name('login');
 Route::post('/postlogin', [AdminController::class, 'postlogin'])->name('postlogin');
 Route::get('/superadmin', [AdminController::class, 'superadmin'])->name('superadmin');
 Route::get('/logout', [AdminController::class, 'logout']);
+Route::put('/superadmin/{id}', [AdminController::class, 'update']);

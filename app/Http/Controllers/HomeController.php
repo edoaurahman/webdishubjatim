@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     function index()
     {
-        $images = Images::all();
+        $images = Images::find(1);
         // dd($images);
         return view('index',[
             'image' => $images,

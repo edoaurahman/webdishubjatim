@@ -10,6 +10,48 @@
 
     $data = json_decode($output, true);
 ?>
+
+{{-- update slider --}}
+<br>
+<div class="container">
+  <div class="row">
+      <div class="col-md-12">
+        @if (session('status'))
+                  <h6 class="alert alert-success">{{ session('status') }}</h6>
+        @endif
+        <div class="card">
+            <div class="card-header">
+                <h1>Edit Slide Image </h1><h5>(optional, use 16:9 ratio)</h5>
+              </div>
+              <div class="card-body">
+                  <form action="{{ url('superadmin/'.$image->id) }}" method="POST" enctype="multipart/form-data">
+                      
+                  @method('PUT')
+                  @csrf
+                  <div class="form-group mb-3">
+                    <label for="">Slide1</label>
+                    <input type="file" name="slide1" value="{{ $image->slide }}" class="form-control">
+                    <img src="{{ asset('template/assets/img/slide/'.$image->slide1)}}" width="300px" alt="">
+                  </div>
+                  <div class="form-group mb-3">
+                      <label for="">Slide2</label>
+                      <input type="file" name="slide2" value="{{ $image->slide2 }}" class="form-control">
+                      <img src="{{ asset('template/assets/img/slide/'.$image->slide2)}}" width="300px" alt="">
+                  </div>
+                  <div class="form-group mb-3">
+                    <label for="">Slide2</label>
+                    <input type="file" name="slide3" value="{{ $image->slide3 }}" class="form-control">
+                    <img src="{{ asset('template/assets/img/slide/'.$image->slide3)}}" width="300px" alt="">
+                </div>
+                  <div class="form-group mb-3">
+                    <button type="submit" class="btn btn-primary">Update Slide</button>
+                  </div>
+                </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
     <!-- ======= Tentang Kami ======= -->
     
         {{-- {{ $image['filename'] }} --}}
@@ -17,7 +59,7 @@
         <div class="container">
             <div class="row">
             <div class="col-lg-6 order-1 order-lg-2">
-              <img style="height: 500px;" src="{{ asset('template') }}/assets/img/{{ $image[3]->filename }}" class="img-fluid" alt="">
+              <img style="height: 500px;" src="{{ asset('template') }}/assets/img/kepala-dishub.jpg" class="img-fluid" alt="">
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
                 <div class="ratio ratio-16x9">
@@ -28,7 +70,6 @@
   
         </div>
       </section><!-- End About Us Section -->
-  
   
       <!-- ======= Services Section ======= -->
       <section id="services" class="services">
