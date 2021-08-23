@@ -25,31 +25,27 @@
                 @endif
                 <div class="card">
                     <div class="card-header">
-                        <h1>Edit Slide Image </h1>
+                        <h1>Edit Youtube and Image </h1>
                         <h5>(optional, use 16:9 ratio)</h5>
                     </div>
                     <div class="card-body">
-                        <form action="{{ url('superadmin/' . $image->id) }}" method="POST"
+                        <form action="{{ url('superadmin/content-yt-image/' . $content->id) }}" method="POST"
                             enctype="multipart/form-data">
-
                             @method('PUT')
                             @csrf
-                            <div class="form-group mb-3">
-                                <label class="control-label mb-1" for="">Slide 1</label>
-                                <input type="file" name="slide1" value="{{ $image->slide }}" class="form-control">
-                                <img src="{{ asset('template/assets/img/slide/' . $image->slide1) }}" width="300px"
-                                    alt="">
+                            <div class="form-group mb-3 col-md-4">
+                                <img src="{{ asset('template/assets/img/content/cara-update-youtube.png') }}" style="border-radius: 12px" width="400px" alt="">
+                                <br>
+                                <label class="control-label mb-1" for="">Youtube</label>
+                                <input type="text" name="yt" value="{{ $content->yt }}" class="form-control">
+                                <div class="ratio ratio-16x9">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $content->yt }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
                             </div>
                             <div class="form-group mb-3">
-                                <label class="control-label mb-1" for="">Slide 2</label>
-                                <input type="file" name="slide2" value="{{ $image->slide2 }}" class="form-control">
-                                <img src="{{ asset('template/assets/img/slide/' . $image->slide2) }}" width="300px"
-                                    alt="">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label class="control-label mb-1" for="">Slide 3</label>
-                                <input type="file" name="slide3" value="{{ $image->slide3 }}" class="form-control">
-                                <img src="{{ asset('template/assets/img/slide/' . $image->slide3) }}" width="300px"
+                                <label class="control-label mb-1" for="">Image Dishub</label>
+                                <input type="file" name="img_kepala_dishub" value="{{ $content->img_kepala_dishub }}" class="form-control">
+                                <img src="{{ asset('template/assets/img/content/' . $content->img_kepala_dishub) }}" width="300px"
                                     alt="">
                             </div>
                             <div class="form-group mb-3">

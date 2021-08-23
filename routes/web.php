@@ -21,5 +21,7 @@ Route::get('/admin', [AdminController::class, 'login'])->name('login');
 Route::post('/postlogin', [AdminController::class, 'postlogin'])->name('postlogin');
 Route::get('/superadmin', [AdminController::class, 'superadmin'])->name('superadmin');
 Route::get('/logout', [AdminController::class, 'logout']);
-Route::put('/superadmin/{id}', [AdminController::class, 'update']);
+Route::put('/superadmin/{id}', [AdminController::class, 'update_header']);
 Route::get('/superadmin/header-slide', [AdminController::class,'header_slide']);
+Route::get('/superadmin/content-yt-image', [AdminController::class,'content_yt_image']);
+Route::put('/superadmin/content-yt-image/{id}', [AdminController::class, 'update_content']);

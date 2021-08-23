@@ -17,7 +17,7 @@
   <div class="row">
       <div>
         <div class="card">
-               <a style="font-size: 28px; font-weight: bold" href="{{ url('/superadmin/header-slide') }}" class="btn btn-primary">Update Slide</a>
+               <a style="font-size: 28px; font-weight: bold" href="{{ url('/superadmin/header-slide') }}" class="btn btn-primary">Update</a>
           </div>
       </div>
   </div>
@@ -30,17 +30,29 @@
         <div class="container">
             <div class="row">
             <div class="col-lg-6 order-1 order-lg-2">
-              <img style="height: 500px;" src="{{ asset('template') }}/assets/img/kepala-dishub.jpg" class="img-fluid" alt="">
+              <img style="height: 500px;" src="{{ asset('template') }}/assets/img/content/{{ $content->img_kepala_dishub }}" class="img-fluid" alt="">
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
                 <div class="ratio ratio-16x9">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/tbqEqFhsE24" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $content->yt }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
           </div>
   
         </div>
       </section><!-- End About Us Section -->
+      {{-- update yt content image --}}
+      <br>
+      <div class="container">
+        <div class="row">
+            <div>
+              <div class="card">
+                    <a style="font-size: 28px; font-weight: bold" href="{{ url('/superadmin/content-yt-image') }}" class="btn btn-primary">Update</a>
+                </div>
+            </div>
+        </div>
+      </div>
+      <br><br><br><br>
   
       <!-- ======= Services Section ======= -->
       <section id="services" class="services">

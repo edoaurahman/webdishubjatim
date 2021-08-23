@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\content_yt;
 use App\Models\Images;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -33,10 +34,12 @@ class AdminController extends Controller
     public function superadmin()
     {
         $images = Images::find(1);
+        $data = content_yt::find(1);
         if (session()->has('username')) {
             return view('admin.admin_index', [
                 'image' => $images,
                 'logout' =>'logout',
+                'content' => $data,
             ]);
         } else {
             return view('admin.login', [
@@ -53,7 +56,7 @@ class AdminController extends Controller
         return redirect('admin');
     }
 
-    public function update(Request $request, $id)
+    public function update_header(Request $request, $id)
     {
         $slide = Images::find($id);
         if ($request->hasFile('slide1')) {
@@ -89,9 +92,25 @@ class AdminController extends Controller
             $file->move('template/assets/img/slide/', $filename);
             $slide->slide3 = $filename;
         }
-        $slide->save();
-        return redirect('superadmin/header-slide')->with('status', 'Slide Image Update Successfully');
+    }
 
+    public function update_content(Request $request, $id)
+    {
+        $content = content_yt::find($id);
+        $content->yt = $request->input('yt');
+        if ($request->hasFile('img_kepala_dishub')) {
+            $destination = 'template/assets/img/content/' . $content->img_kepala_dishub;
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+            $file = $request->file('img_kepala_dishub');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extention;
+            $file->move('template/assets/img/content/', $filename);
+            $content->img_kepala_dishub = $filename;
+        }
+        $content->save();
+        return redirect('superadmin/content-yt-image')->with('status', 'Youtube And Image Update Successfully');
     }
     public function header_slide()
     {
@@ -100,6 +119,20 @@ class AdminController extends Controller
             return view('admin.header_edit', [
                 'image' => $images,
                 'logout' =>'logout',
+            ]);
+        } else {
+            return view('admin.login', [
+                'title' => 'Login Form'
+            ]);
+        }
+    }
+
+    public function content_yt_image()
+    {
+        $data = content_yt::find(1);
+        if (session()->has('username')) {
+            return view('admin.content-yt-img', [
+               'content' => $data
             ]);
         } else {
             return view('admin.login', [
