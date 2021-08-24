@@ -23,7 +23,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h1>Tambah Berita</h1>
-                        <a href="{{ url('superadmin/berita') }}" class="btn btn-danger float-end">BACK</a>
+                        <a href="{{ url('superadmin/berita') }}" class="btn btn-danger float-end">Kembali</a>
                     </div>
                     <div class="card-body">
                       <form action="{{ url('superadmin/berita') }}" method="POST" enctype="multipart/form-data">
@@ -34,7 +34,7 @@
                         </div>
                         <div class="form-group mb-3">
                           <label for="">Slug</label>
-                          <input type="text" placeholder="Contoh : terjerat-hutang-online-pemuda-bunuh-diri" name="slug" class="form-control">
+                          <input type="text" placeholder="Contoh : perpanjangan-ppkm-hari-pertama-15-daerah-di-jatim-masih-zona-merah" name="slug" class="form-control">
                         </div>
                         <div class="form-group mb-3">
                           <label for="">Excerpt / Potongan Deskripsi Berita</label>

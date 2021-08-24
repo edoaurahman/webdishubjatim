@@ -13,19 +13,20 @@
     <div class="container mt-3">
         @if (session('status'))
                   <h6 class="alert alert-success">{{ session('status') }}</h6>
-        @endif
-        <h1 class="mb-5">{{ $title }}</h1>
+        @endif        
         <div class="position-relative">
-            <div class="position-absolute end-0">
+            <div class="card-header">
+                <h1 class="mb-5">{{ $title }}</h1>
                 <a href="/superadmin/berita/create" class="btn btn-primary"">Tambah Berita</a>
+                <a href="/superadmin" class="btn btn-primary"">Kembali</a>
             </div>
         </div>
-        <br><br>
+        
         <hr>
         @foreach ($posts as $post)
             <article class="mb-5 border-bottom pb-4">
                 <h2>
-                    <a href="{{asset('/berita')}}/{{ $post->slug }}" class="text-decoration-none">{{ $post->title }}</a>
+                    <a href="{{asset('/superadmin/berita')}}/{{ $post->slug }}" class="text-decoration-none">{{ $post->title }}</a>
                 </h2>
                 <p>{{ $post->excerpt }}</p>
             </article>

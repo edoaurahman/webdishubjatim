@@ -23,6 +23,31 @@
 
   </head>
   <body>
+
+    <!-- ======= Header ======= -->
+<header id="header" class="d-flex align-items-center">
+  <div class="container d-flex align-items-center">
+
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <a href="{{ asset('/') }}" class="logo me-auto"><img src="{{ asset('template') }}/assets/img/logo-jatim.png" alt="" class="img-fluid"></a>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link scrollto active" href="{{ url('/') }}">Kembali</a></li>
+        {{-- <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
+        <li><a class="nav-link scrollto" href="#services">Berita</a></li>
+        <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+        <li><a class="nav-link scrollto" href="#team">Team</a></li> --}}
+        @if (isset($logout))
+        <li><a class="nav-link" href="{{ url('/'.$logout) }}">{{ $logout }}</a></li>
+        @endif
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+  </div>
+</header><!-- End Header -->
+
     <div class="container mt-3">
         <article class="mb-5">
             <h2>{{ $post->title }}</h2>

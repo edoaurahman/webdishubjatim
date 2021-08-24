@@ -23,6 +23,48 @@
 
   </head>
   <body>
+      <!-- ======= Header ======= -->
+<header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <a href="{{ asset('/') }}" class="logo me-auto"><img src="{{ asset('template') }}/assets/img/logo-jatim.png" alt="" class="img-fluid"></a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
+          <li><a class="nav-link scrollto" href="#services">Berita</a></li>
+          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          @if (isset($logout))
+          <li><a class="nav-link" href="{{ url('/'.$logout) }}">{{ $logout }}</a></li>
+          @endif
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  
     <div class="container mt-3">
         <article class="mb-5">
             <h2>{{ $post->title }}</h2>
@@ -31,7 +73,12 @@
             {!! $post->body !!}
         </article>
         <a name="back-post" id="back-post" class="btn btn-success" href="{{ asset('/superadmin/berita') }}" role="button">Kembali</a>
-        <a name="back-post" id="back-post" class="btn btn-danger" href="{{ asset('/superadmin/berita') }}" role="button">Hapus</a>
+        {{-- <a name="back-post" id="back-post" class="btn btn-danger" href="{{ asset('/superadmin/berita') }}" role="button">Hapus</a> --}}
+        <form action="{{ $post->id }}" method="POST" class="d-inline">
+            @method('delete')
+            @csrf
+            <button type="submit" class="btn btn-danger">Hapus</button>
+        </form>
         <a name="back-post" id="back-post" class="btn btn-primary" href="{{ asset('/superadmin/berita/edit/'.$post->id) }}    " role="button">Edit</a>
     </div>
     <br><br><br>

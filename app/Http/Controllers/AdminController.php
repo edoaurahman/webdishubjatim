@@ -238,4 +238,10 @@ class AdminController extends Controller
             ]);
         }
     }
+
+    public function destroy(Post $post)
+    {
+        Post::destroy($post->id);
+        return redirect('/superadmin/berita')->with('status', 'Berita Berhasil di Hapus');
+    }
 }
