@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\content_yt;
 use App\Models\Images;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -133,6 +134,66 @@ class AdminController extends Controller
         if (session()->has('username')) {
             return view('admin.content-yt-img', [
                'content' => $data
+            ]);
+        } else {
+            return view('admin.login', [
+                'title' => 'Login Form'
+            ]);
+        }
+    }
+
+    public function index_berita()
+    {
+        $posts = Post::all();
+        if (session()->has('username')) {
+            return view('admin.berita.posts', [
+                'posts' => $posts,
+                'title' => 'Tambah Dan Update Berita',
+            ]);
+        } else {
+            return view('admin.login', [
+                'title' => 'Login Form'
+            ]);
+        }
+    }
+
+    public function create_berita()
+    {
+        if (session()->has('username')) {
+            return view('admin.berita.create', [
+                'title' => 'Tambah Dan Update Berita',
+            ]);
+        } else {
+            return view('admin.login', [
+                'title' => 'Login Form'
+            ]);
+        }
+    }
+
+    public function store_berita(Request $request)
+    {
+        $post = new Post();
+        $post->title = $request->input('title');
+        $post->slug = $request->input('slug');
+        $post->excerpt = $request->input('excerpt');
+        $post->body = $request->input('body');
+        if ($request->hasFile('image')) 
+        {
+            $file = $request->file('image');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extention;
+            $file->move('template/assets/img/berita/', $filename);
+            $post->image = $filename;
+        }
+        $post->save();
+        return redirect('superadmin/berita/create')->with('status', 'Berita Telah Tersimpan');
+    }
+
+    public function berita(Post $post)
+    {
+        if (session()->has('username')) {
+            return view('admin.berita.post', [
+                'post' => $post,
             ]);
         } else {
             return view('admin.login', [

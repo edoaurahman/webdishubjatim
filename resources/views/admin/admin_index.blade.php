@@ -1,15 +1,6 @@
 @extends('layouts.main')
 @section('title', 'Halaman Admin')
 @section('content')
-<?php
-    $curl = curl_init();
-    curl_setopt($curl, CURLOPT_URL, "https://newsapi.org/v2/top-headlines?country=id&apiKey=384d6ff2a54546b2bb58c73537d7eb88");
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-    $output = curl_exec($curl);
-    curl_close($curl);
-
-    $data = json_decode($output, true);
-?>
 
 {{-- update slider --}}
 <br>
@@ -121,17 +112,7 @@
                         <thead>
                         </thead>
                         <tbody>
-                          <?php $i = 0; ?>
-                          @foreach ($data['articles'] as $d)
-                              <?php if ($i == 4) break; ?>
-                              <tr>
-                                <td><img src="<?php echo $d['urlToImage']; ?>" width="130px" alt="..."></td>
-                                <td style="text-align: left"><?php echo $d['title']; ?> <a href="<?php echo $d['url']; ?>" >Lihat Detail...</a></td>
-                                
-                              </tr>
-                              <?php $i++; ?>
-                          @endforeach
-
+                          {{-- berita akan di tampilkan disini --}}
                         </tbody>
                       </table>
                     </div>
@@ -141,6 +122,18 @@
     </div>
         </div>
       </section><!-- End Services Section -->
+      {{-- update yt content image --}}
+      <br>
+      <div class="container">
+        <div class="row">
+            <div>
+              <div class="card">
+                    <a style="font-size: 28px; font-weight: bold" href="{{ url('/superadmin/berita') }}" class="btn btn-primary">Update</a>
+                </div>
+            </div>
+        </div>
+      </div>
+      <br><br><br><br>
   
       <!-- ======= Cta Section ======= -->
       <section id="cta" class="cta">

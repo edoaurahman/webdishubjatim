@@ -25,3 +25,7 @@ Route::put('/superadmin/{id}', [AdminController::class, 'update_header']);
 Route::get('/superadmin/header-slide', [AdminController::class,'header_slide']);
 Route::get('/superadmin/content-yt-image', [AdminController::class,'content_yt_image']);
 Route::put('/superadmin/content-yt-image/{id}', [AdminController::class, 'update_content']);
+Route::get('/superadmin/berita', [AdminController::class, 'index_berita']);
+Route::get('/superadmin/berita/create', [AdminController::class, 'create_berita']);
+Route::post('/superadmin/berita', [AdminController::class, 'store_berita']);
+Route::get('/berita/{post:slug}',[AdminController::class, 'berita']);
