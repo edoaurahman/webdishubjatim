@@ -94,17 +94,16 @@
                          <thead>
                          </thead>
                          <tbody>
-                           <?php $i = 0; ?>
-                           @foreach ($data['articles'] as $d)
+                          <?php $i = 0; ?>
+                           @foreach ($post as $d)
                                <?php if ($i == 4) break; ?>
                                <tr>
-                                 <td><img src="<?php echo $d['urlToImage']; ?>" width="130px" alt="..."></td>
-                                 <td style="text-align: left"><?php echo $d['title']; ?> <a href="<?php echo $d['url']; ?>" >Lihat Detail...</a></td>
+                                 <td><img src="{{ asset('template/assets/img/berita/'.$d->image) }}" width="130px" alt="..."></td>
+                                 <td style="text-align: left"><?php echo $d->title; ?> <a href="{{asset('/berita')}}/{{ $d->slug }}" >Lihat Detail...</a></td>
                                  
                                </tr>
                                <?php $i++; ?>
-                           @endforeach
- 
+                               @endforeach
                          </tbody>
                        </table>
                      </div>

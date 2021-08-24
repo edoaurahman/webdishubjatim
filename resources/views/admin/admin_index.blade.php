@@ -8,7 +8,7 @@
   <div class="row">
       <div>
         <div class="card">
-               <a style="font-size: 28px; font-weight: bold" href="{{ url('/superadmin/header-slide') }}" class="btn btn-primary">Update</a>
+               <a style="font-size: 28px; font-weight: bold" href="{{ url('/superadmin/header-slide') }}" class="btn btn-primary">Ganti Slide</a>
           </div>
       </div>
   </div>
@@ -113,6 +113,16 @@
                         </thead>
                         <tbody>
                           {{-- berita akan di tampilkan disini --}}
+                          <?php $i = 0; ?>
+                           @foreach ($post as $d)
+                               <?php if ($i == 4) break; ?>
+                               <tr>
+                                 <td><img src="{{ asset('template/assets/img/berita/'.$d->image) }}" width="130px" alt="..."></td>
+                                 <td style="text-align: left"><?php echo $d->title; ?> <a href="{{asset('/superadmin/berita')}}/{{ $d->slug }}" >Lihat Detail...</a></td>
+                                 
+                               </tr>
+                               <?php $i++; ?>
+                           @endforeach
                         </tbody>
                       </table>
                     </div>

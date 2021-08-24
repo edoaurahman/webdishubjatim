@@ -30,9 +30,7 @@
             <br><br><br>
             {!! $post->body !!}
         </article>
-        <a name="back-post" id="back-post" class="btn btn-success" href="{{ asset('/superadmin/berita') }}" role="button">Kembali</a>
-        <a name="back-post" id="back-post" class="btn btn-danger" href="{{ asset('/superadmin/berita') }}" role="button">Hapus</a>
-        <a name="back-post" id="back-post" class="btn btn-primary" href="{{ asset('/superadmin/berita/edit/'.$post->id) }}    " role="button">Edit</a>
+        <a name="back-post" id="back-post" class="btn btn-success" href="{{ asset('/') }}" role="button">Kembali</a>
     </div>
     <br><br><br>
 

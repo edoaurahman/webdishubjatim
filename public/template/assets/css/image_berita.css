@@ -1,0 +1,8 @@
+.gambar-berita{
+    width: 700px;
+}
+@media (max-width: 992px) {
+    .gambar-berita {
+      width: 340px;
+    }
+  }

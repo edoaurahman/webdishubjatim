@@ -36,11 +36,13 @@ class AdminController extends Controller
     {
         $images = Images::find(1);
         $data = content_yt::find(1);
+        $post = Post::all();
         if (session()->has('username')) {
             return view('admin.admin_index', [
                 'image' => $images,
                 'logout' =>'logout',
                 'content' => $data,
+                'post' => $post,
             ]);
         } else {
             return view('admin.login', [
@@ -193,6 +195,41 @@ class AdminController extends Controller
     {
         if (session()->has('username')) {
             return view('admin.berita.post', [
+                'post' => $post,
+            ]);
+        } else {
+            return view('admin.login', [
+                'title' => 'Login Form'
+            ]);
+        }
+    }
+    public function update_berita(Request $request, $id)
+    {
+        $post = Post::find($id);
+        $post->title = $request->input('title');
+        $post->slug = $request->input('slug');
+        $post->excerpt = $request->input('excerpt');
+        $post->body = $request->input('body');
+        if ($request->hasFile('image')) {
+            $destination = 'template/assets/img/berita/' . $post->image;
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+            $file = $request->file('image');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extention;
+            $file->move('template/assets/img/berita/', $filename);
+            $post->image = $filename;
+        }
+        $post->save();
+        return redirect('superadmin/berita')->with('status', 'Berita Berhasil Di Update');
+    }
+
+    public function edit_berita($id)
+    {
+        $post = Post::find($id);
+        if (session()->has('username')) {
+            return view('admin.berita.edit', [
                 'post' => $post,
             ]);
         } else {
