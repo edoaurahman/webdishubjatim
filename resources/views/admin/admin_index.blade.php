@@ -129,7 +129,7 @@
                           {{-- berita akan di tampilkan disini --}}
                           <?php $i = 0; ?>
                            @foreach ($post as $d)
-                               <?php if ($i == 4) break; ?>
+                               <?php if ($i == 5) break; ?>
                                <tr>
                                  <td><img src="{{ asset('template/assets/img/berita/'.$d->image) }}" width="130px" alt="..."></td>
                                  <td style="text-align: left"><?php echo $d->title; ?> <a href="{{asset('/superadmin/berita')}}/{{ $d->slug }}" >Lihat Detail...</a></td>
@@ -158,7 +158,7 @@
       </div>
       <br><br><br><br>
       <!-- ======= Cta Section ======= -->
-      <section id="cta" class="cta">
+      {{-- <section id="cta" class="cta">
         <div class="container">
   
           <div class="row">
@@ -166,10 +166,10 @@
           </div>
   
         </div>
-      </section><!-- End Cta Section -->
+      </section><!-- End Cta Section --> --}}
   
       <!-- ======= Portfolio Section ======= -->
-      <section id="portfolio" class="portfolio">
+      {{-- <section id="portfolio" class="portfolio">
         <div class="container">
   
           <div class="section-title">
@@ -319,7 +319,7 @@
           </div>
   
         </div>
-      </section><!-- End Portfolio Section -->
+      </section><!-- End Portfolio Section --> --}}
   
       
       <!-- ======= Contact Section ======= -->
