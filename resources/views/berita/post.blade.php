@@ -88,7 +88,7 @@
 
 
   <body>
-    <div class="container mt-3">
+    <div class="container mt-12">
         <article class="mb-5">
             <h2>{{ $post->title }}</h2>
             <img src="{{ asset('template/assets/img/berita/'.$post->image)}}" class="gambar-berita" alt="">
