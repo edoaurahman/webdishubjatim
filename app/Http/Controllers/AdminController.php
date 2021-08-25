@@ -36,7 +36,7 @@ class AdminController extends Controller
     {
         $images = Images::find(1);
         $data = content_yt::find(1);
-        $post = Post::all();
+        $post = Post::latest()->get();
         if (session()->has('username')) {
             return view('admin.admin_index', [
                 'image' => $images,
