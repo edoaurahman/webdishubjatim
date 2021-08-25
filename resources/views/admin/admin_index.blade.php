@@ -58,32 +58,51 @@
                             <li data-bs-target="#conth" data-bs-slide-to="0" class="active"></li>
                             <li data-bs-target="#conth" data-bs-slide-to="1"></li>
                             <li data-bs-target="#conth" data-bs-slide-to="2"></li>
+                            <li data-bs-target="#conth" data-bs-slide-to="3"></li>
+                            <li data-bs-target="#conth" data-bs-slide-to="4"></li>
                         </ol>
                         <div class="carousel-inner warna" role="listbox">
-                            <div class="carousel-item item-slide active">
-                                <div class="overlay-image" style="background-image: url(https://www.silverkris.com/wp-content/uploads/2017/11/Suroboyo-Monument-1024x681.jpg)">
-                                </div>
-                                <div class="container position-image">
-                                    <h4>Lambang Surabaya</h4>
-                                    <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-                                </div>
+
+                          <div class="carousel-item item-slide active">
+                            <div class="overlay-image" style="background-image: url({{ asset('template') }}/assets/img/berita/gambar/{{ $slide_berita[0]->gambar }})">
                             </div>
-                            <div class="carousel-item item-slide">
-                                <div class="overlay-image" style="background-image: url(https://www.silverkris.com/wp-content/uploads/2017/10/hotel-majapahit-1024x657.jpg)">
-                                </div>
-                                <div class="container position-image">
-                                    <h4>Hotel Majapahit Surabaya</h4>
-                                    <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-                                </div>
+                            <div class="container position-image">
+                              <h4>{{ $slide_berita[0]->header }}</h4>
+                              <h6>{{ $slide_berita[0]->isi }}</h6>
                             </div>
-                            <div class="carousel-item item-slide">
-                                <div class="overlay-image" style="background-image: url(https://www.silverkris.com/wp-content/uploads/2017/11/Monumen-Kapal-Selam-750x500.jpg)">
-                                </div>
-                                <div class="container position-image">
-                                    <h4>Monumen Kapal Selam</h4>
-                                    <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-                                </div>
+                          </div> 
+                          <div class="carousel-item item-slide">
+                            <div class="overlay-image" style="background-image: url({{ asset('template') }}/assets/img/berita/gambar/{{ $slide_berita[1]->gambar }})">
                             </div>
+                            <div class="container position-image">
+                              <h4>{{ $slide_berita[1]->header }}</h4>
+                              <h6>{{ $slide_berita[1]->isi }}</h6>
+                            </div>
+                          </div>
+                          <div class="carousel-item item-slide ">
+                            <div class="overlay-image" style="background-image: url({{ asset('template') }}/assets/img/berita/gambar/{{ $slide_berita[2]->gambar }})">
+                            </div>
+                            <div class="container position-image">
+                              <h4>{{ $slide_berita[2]->header }}</h4>
+                              <h6>{{ $slide_berita[2]->isi }}</h6>
+                            </div>
+                          </div>
+                          <div class="carousel-item item-slide ">
+                            <div class="overlay-image" style="background-image: url({{ asset('template') }}/assets/img/berita/gambar/{{ $slide_berita[3]->gambar }})">
+                            </div>
+                            <div class="container position-image">
+                              <h4>{{ $slide_berita[3]->header }}</h4>
+                              <h6>{{ $slide_berita[3]->isi }}</h6>
+                            </div>
+                          </div>
+                          <div class="carousel-item item-slide ">
+                            <div class="overlay-image" style="background-image: url({{ asset('template') }}/assets/img/berita/gambar/{{ $slide_berita[4]->gambar }})">
+                            </div>
+                            <div class="container position-image">
+                              <h4>{{ $slide_berita[4]->header }}</h4>
+                              <h6>{{ $slide_berita[4]->isi }}</h6>
+                            </div>
+                          </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#conth" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

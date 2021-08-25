@@ -34,3 +34,6 @@ Route::delete('/superadmin/berita/{post}',[AdminController::class, 'destroy']);
 Route::get('/berita/{post:slug}',[HomeController::class, 'berita']);
 Route::get('/superadmin/berita/edit/{id}', [AdminController::class, 'edit_berita']);
 Route::put('/superadmin/berita/update/{id}', [AdminController::class, 'update_berita']);
+Route::get('/superadmin/berita-gambar',[AdminController::class, 'berita_gambar']);
+Route::get('/superadmin/edit-berita-gambar/{id}',[AdminController::class, 'edit_gambar_berita']);
+Route::put('/superadmin/edit-berita-gambar/{id}',[AdminController::class, 'update_gambar_berita']);

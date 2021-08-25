@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\content_yt;
-use App\Models\Images;
 use App\Models\Post;
+use App\Models\Images;
+use App\Models\content_yt;
 use Illuminate\Http\Request;
+use App\Models\Berita_Gambar;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
@@ -37,12 +38,14 @@ class AdminController extends Controller
         $images = Images::find(1);
         $data = content_yt::find(1);
         $post = Post::latest()->get();
+        $slide_berita = Berita_Gambar::latest()->get();
         if (session()->has('username')) {
             return view('admin.admin_index', [
                 'image' => $images,
                 'logout' =>'logout',
                 'content' => $data,
                 'post' => $post,
+                'slide_berita' => $slide_berita,
             ]);
         } else {
             return view('admin.login', [
@@ -243,5 +246,65 @@ class AdminController extends Controller
     {
         Post::destroy($post->id);
         return redirect('/superadmin/berita')->with('status', 'Berita Berhasil di Hapus');
+    }
+
+    public function berita_gambar()
+    {
+        $slide_berita = Berita_Gambar::all();
+        return view('admin.berita.gambar',[
+            'gambar_slide' => $slide_berita,
+        ]);
+    }
+
+    // public function store_gambar_berita(Request $request)
+    // {
+    //     $img = new Berita_Gambar();
+    //     $img->header = $request->input('header');
+    //     $img->isi = $request->input('isi');
+    //     if ($request->hasFile('image')) 
+    //     {
+    //         $file = $request->file('image');
+    //         $extention = $file->getClientOriginalExtension();
+    //         $filename = time().'.'.$extention;
+    //         $file->move('template/assets/img/berita/gambar/', $filename);
+    //         $img->gambar = $filename;
+    //     }
+    //     $img->save();
+    //     return redirect('/superadmin/berita-gambar')->with('status', 'Slide Gambar Berita Telah Tersimpan');
+    // }
+
+    public function edit_gambar_berita($id)
+    {
+        $slide = Berita_Gambar::find($id);
+        if (session()->has('username')) {
+            return view('admin.berita.edit-gambar', [
+                'slide_gambar' => $slide,
+            ]);
+        } else {
+            return view('admin.login', [
+                'title' => 'Login Form'
+            ]);
+        }
+    }
+
+    public function update_gambar_berita(Request $request, $id)
+    {
+        $slide = Berita_Gambar::find($id);
+        $slide->header = $request->input('header');
+        $slide->isi = $request->input('isi');
+        if ($request->hasFile('gambar')) {
+            $destination = 'template/assets/img/berita/gambar/' . $slide->gambar;
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+            $file = $request->file('slide1');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extention;
+            $file->move('template/assets/img/berita/gambar/', $filename);
+            $slide->gambar = $filename;
+        }
+        $slide->save();
+        return redirect('/superadmin/berita-gambar')->with('status', 'Slide Gambar Berita Telah Terupdate');
+        
     }
 }
