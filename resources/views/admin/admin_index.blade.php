@@ -347,7 +347,7 @@
                 <p>{{ $contact->nomer }}</p>
               </div>
 
-              <div class="fax">
+              <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Fax:</h4>
                 <p>{{ $contact->fax }}</p>

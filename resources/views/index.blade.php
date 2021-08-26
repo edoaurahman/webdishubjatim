@@ -148,6 +148,12 @@
                   <h4>Call:</h4>
                   <p>{{ $contact->nomer }}</p>
                 </div>
+  
+                <div class="phone">
+                  <i class="bi bi-phone"></i>
+                  <h4>Fax:</h4>
+                  <p>{{ $contact->fax }}</p>
+                </div>
 
                 <div class="address">
                   <i class="bi bi-geo-alt"></i>
