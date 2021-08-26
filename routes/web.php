@@ -37,3 +37,5 @@ Route::put('/superadmin/berita/update/{id}', [AdminController::class, 'update_be
 Route::get('/superadmin/berita-gambar',[AdminController::class, 'berita_gambar']);
 Route::get('/superadmin/edit-berita-gambar/{id}',[AdminController::class, 'edit_gambar_berita']);
 Route::put('/superadmin/edit-berita-gambar/{id}',[AdminController::class, 'update_gambar_berita']);
+Route::get('/superadmin/contact', [AdminController::class, 'contact']);
+Route::put('/superadmin/contact/{id}', [AdminController::class, 'update_contact']);

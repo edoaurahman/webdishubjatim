@@ -19,7 +19,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h1>Tambah Slide Gambar Berita</h1>
-                        <a href="{{ url('students') }}" class="btn btn-danger float-end">BACK</a>
+                        <a href="{{ url('superadmin') }}" class="btn btn-danger float-end">BACK</a>
                     </div>
                     <div class="card-body">
                       

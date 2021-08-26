@@ -27,6 +27,7 @@
                     <div class="card-header">
                         <h1>Edit Youtube and Image </h1>
                         <h5>(optional, use 16:9 ratio)</h5>
+                        <a href="{{ url('superadmin') }}" class="btn btn-danger float-end">BACK</a>
                     </div>
                     <div class="card-body">
                         <form action="{{ url('superadmin/content-yt-image/' . $content->id) }}" method="POST"

@@ -7,6 +7,7 @@ use App\Models\Images;
 use App\Models\content_yt;
 use Illuminate\Http\Request;
 use App\Models\Berita_Gambar;
+use App\Models\Contact;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
@@ -39,6 +40,7 @@ class AdminController extends Controller
         $data = content_yt::find(1);
         $post = Post::latest()->get();
         $slide_berita = Berita_Gambar::latest()->get();
+        $contact = Contact::find(1);
         if (session()->has('username')) {
             return view('admin.admin_index', [
                 'image' => $images,
@@ -46,6 +48,7 @@ class AdminController extends Controller
                 'content' => $data,
                 'post' => $post,
                 'slide_berita' => $slide_berita,
+                'contact' => $contact,
             ]);
         } else {
             return view('admin.login', [
@@ -98,6 +101,8 @@ class AdminController extends Controller
             $file->move('template/assets/img/slide/', $filename);
             $slide->slide3 = $filename;
         }
+        $slide->save();
+        return redirect('superadmin/header-slide')->with('status', 'Slide Update Successfully');
     }
 
     public function update_content(Request $request, $id)
@@ -306,5 +311,29 @@ class AdminController extends Controller
         $slide->save();
         return redirect('/superadmin/berita-gambar')->with('status', 'Slide Gambar Berita Telah Terupdate');
         
+    }
+    public function contact()
+    {
+        $contact = Contact::find(1);
+        if (session()->has('username')) {
+            return view('admin.contact-edit', [
+                'contact' => $contact,
+            ]);
+        } else {
+            return view('admin.login', [
+                'title' => 'Login Form'
+            ]);
+        }
+    }
+
+    public function update_contact(Request $request, $id)
+    {
+        $contact = Contact::find($id);
+        $contact->email = $request->input('email');
+        $contact->nomer = $request->input('nomer');
+        $contact->fax = $request->input('fax');
+        
+        $contact->save();
+        return redirect('superadmin/contact')->with('status', 'Contact Update Successfully');
     }
 }

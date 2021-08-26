@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Update Slide</title>
+    <title>Update Contact</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,36 +25,27 @@
                 @endif
                 <div class="card">
                     <div class="card-header">
-                        <h1>Edit Slide Image </h1>
-                        <h5>(optional, use 16:9 ratio)</h5>
-                        <a href="{{ url('superadmin') }}" class="btn btn-danger float-end">BACK</a>
+                        <h1>Edit Contact </h1>
                     </div>
                     <div class="card-body">
-                        <form action="{{ url('superadmin/' . $image->id) }}" method="POST"
+                        <form action="{{ url('superadmin/contact/' . $contact->id) }}" method="POST"
                             enctype="multipart/form-data">
-
                             @method('PUT')
                             @csrf
                             <div class="form-group mb-3">
-                                <label class="control-label mb-1" for="">Slide 1</label>
-                                <input type="file" name="slide1" value="{{ $image->slide }}" class="form-control">
-                                <img src="{{ asset('template/assets/img/slide/' . $image->slide1) }}" width="300px"
-                                    alt="">
+                                <label class="control-label mb-1" for="">Email</label>
+                                <input type="text" name="email" placeholder="username@mail.com" value="{{ $contact->email }}" class="form-control">
                             </div>
                             <div class="form-group mb-3">
-                                <label class="control-label mb-1" for="">Slide 2</label>
-                                <input type="file" name="slide2" value="{{ $image->slide2 }}" class="form-control">
-                                <img src="{{ asset('template/assets/img/slide/' . $image->slide2) }}" width="300px"
-                                    alt="">
+                                <label class="control-label mb-1" for="">No Telp</label>
+                                <input type="text" name="nomer" placeholder="(022) 752XXXXXXX" value="{{ $contact->nomer }}" class="form-control">
                             </div>
                             <div class="form-group mb-3">
-                                <label class="control-label mb-1" for="">Slide 3</label>
-                                <input type="file" name="slide3" value="{{ $image->slide3 }}" class="form-control">
-                                <img src="{{ asset('template/assets/img/slide/' . $image->slide3) }}" width="300px"
-                                    alt="">
+                                <label class="control-label mb-1" for="">Fax</label>
+                                <input type="text" name="fax" placeholder="(022) 752XXXXXXX" value="{{ $contact->fax }}" class="form-control">
                             </div>
                             <div class="form-group mb-3">
-                                <button type="submit" class="btn btn-primary">Update Slide</button>
+                                <button type="submit" class="btn btn-primary">Update Contact</button>
                             </div>
                         </form>
                     </div>
