@@ -2,6 +2,7 @@
   <footer id="footer">
     <div class="container">
       <h3>MEDSOS DISHUB JATIM</h3>
+      <p>Di Kelola Oleh Sekretariat Dinas Perhubungan Provinsi Jawa Timur</p>
       <div class="social-links">
         <a href="https://twitter.com/dishubjatim" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="https://www.facebook.com/dishubjawatimur/" class="facebook"><i class="bx bxl-facebook"></i></a>

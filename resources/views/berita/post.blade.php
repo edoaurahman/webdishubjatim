@@ -45,9 +45,9 @@
     <nav id="navbar" class="navbar">
       <ul>
         <li><a class="nav-link scrollto active" href="/">Home</a></li>
-        <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
+        {{-- <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
         <li><a class="nav-link scrollto" href="#services">Berita</a></li>
-        <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+        <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li> --}}
         {{-- <li><a class="nav-link scrollto" href="#team">Team</a></li> --}}
         {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
@@ -66,7 +66,7 @@
             <li><a href="#">Drop Down 4</a></li>
           </ul>
         </li> --}}
-        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        {{-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li> --}}
         @if (isset($logout))
         
         <button style="margin-left: 20px" onclick="location.href='{{ url('/'.$logout) }}'" type="button" class="btn btn-outline-danger">
@@ -84,14 +84,13 @@
 
   </div>
 </header><!-- End Header -->
-
-
-
   <body>
     <div class="container mt-12">
         <article class="mb-5">
+          <br><br>
             <h2>{{ $post->title }}</h2>
-            <img src="{{ asset('template/assets/img/berita/'.$post->image)}}" class="gambar-berita" alt="">
+            <br>
+            <img src="{{ asset('template/assets/img/berita/'.$post->image)}}" class="gambar-berita tengah" alt="">
             <br><br><br>
             {!! $post->body !!}
         </article>
@@ -99,27 +98,15 @@
     </div>
     <br><br><br>
 
-<!-- ======= Footer ======= -->
-<footer id="footer">
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
     <div class="container">
       <h3>MEDSOS DISHUB JATIM</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+      <p>Di Kelola Oleh Sekretariat Dinas Perhubungan Provinsi Jawa Timur</p>
       <div class="social-links">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
-      <div class="copyright">
-        &copy; Copyright <strong><span>Green</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/green-free-one-page-bootstrap-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        <a href="https://twitter.com/dishubjatim" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://www.facebook.com/dishubjawatimur/" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/dishubjatim/" class="instagram"><i class="bx bxl-instagram"></i></a>
       </div>
     </div>
   </footer><!-- End Footer -->

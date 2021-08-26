@@ -130,7 +130,6 @@
   
           <div class="section-title">
             <h2>Contact Us</h2>
-            <p>Di Kelola Oleh Sekretariat Dinas Perhubungan Provinsi Jawa Timur</p>
           </div>
   
           <div class="row">

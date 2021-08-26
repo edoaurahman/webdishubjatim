@@ -26,6 +26,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h1>Edit Contact </h1>
+                        <a href="{{ url('superadmin') }}" class="btn btn-danger float-end">BACK</a>
                     </div>
                     <div class="card-body">
                         <form action="{{ url('superadmin/contact/' . $contact->id) }}" method="POST"
