@@ -219,14 +219,14 @@ class AdminController extends Controller
         $post->excerpt = $request->input('excerpt');
         $post->body = $request->input('body');
         if ($request->hasFile('image')) {
-            $destination = 'template/assets/img/berita/' . $post->image;
+            $destination = 'template/assets/img/berita/gambar/' . $post->image;
             if (File::exists($destination)) {
                 File::delete($destination);
             }
             $file = $request->file('image');
             $extention = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extention;
-            $file->move('template/assets/img/berita/', $filename);
+            $file->move('template/assets/img/berita/gambar/', $filename);
             $post->image = $filename;
         }
         $post->save();
