@@ -18,7 +18,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h1>Tambah Slide Gambar Berita</h1>
+                        <h1>Update Slide Gambar Berita</h1>
                         <a href="{{ url('superadmin') }}" class="btn btn-danger float-end">BACK</a>
                     </div>
                     <div class="card-body">

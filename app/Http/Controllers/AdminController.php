@@ -219,14 +219,14 @@ class AdminController extends Controller
         $post->excerpt = $request->input('excerpt');
         $post->body = $request->input('body');
         if ($request->hasFile('image')) {
-            $destination = 'template/assets/img/berita/gambar/' . $post->image;
+            $destination = 'template/assets/img/berita/' . $post->image;
             if (File::exists($destination)) {
                 File::delete($destination);
             }
             $file = $request->file('image');
             $extention = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extention;
-            $file->move('template/assets/img/berita/gambar/', $filename);
+            $file->move('template/assets/img/berita/', $filename);
             $post->image = $filename;
         }
         $post->save();
@@ -297,12 +297,12 @@ class AdminController extends Controller
         $slide = Berita_Gambar::find($id);
         $slide->header = $request->input('header');
         $slide->isi = $request->input('isi');
-        if ($request->hasFile('gambar')) {
+        if ($request->hasFile('image')) {
             $destination = 'template/assets/img/berita/gambar/' . $slide->gambar;
             if (File::exists($destination)) {
                 File::delete($destination);
             }
-            $file = $request->file('slide1');
+            $file = $request->file('image');
             $extention = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extention;
             $file->move('template/assets/img/berita/gambar/', $filename);
