@@ -12,7 +12,7 @@
             <li><a class="nav-link scrollto" href="#services">Berita</a></li>
             <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
             @if (isset($admin))
-            <li><a class="nav-link scrollto" href="{{ url('/superadmin/'.$admin) }}">Update admin</a></li>
+            <li><a class="nav-link scrollto" href="{{ url('/superadmin/'.$admin) }}">Update User dan Pass</a></li>
             @endif
             @if (isset($logout))
             
