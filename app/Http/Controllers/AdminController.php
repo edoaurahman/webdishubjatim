@@ -8,6 +8,7 @@ use App\Models\content_yt;
 use Illuminate\Http\Request;
 use App\Models\Berita_Gambar;
 use App\Models\Contact;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
@@ -49,11 +50,10 @@ class AdminController extends Controller
                 'post' => $post,
                 'slide_berita' => $slide_berita,
                 'contact' => $contact,
+                'admin' => 'update-admin',
             ]);
         } else {
-            return view('admin.login', [
-                'title' => 'Login Form'
-            ]);
+            return redirect('/admin');
         }
     }
 
@@ -335,5 +335,35 @@ class AdminController extends Controller
         
         $contact->save();
         return redirect('superadmin/contact')->with('status', 'Contact Update Successfully');
+    }
+
+
+
+    //ubah username dan password admin
+
+
+    public function userPassAdmin()
+    {
+        $admin = User::find(1);
+        if (session()->has('username')) {
+            return view('admin.update-admin', [
+                'admin' => $admin,
+            ]);
+        } else {
+            return view('admin.login', [
+                'title' => 'Login Form'
+            ]);
+        }
+    }
+
+    public function update_admin(Request $request, $id)
+    {
+        $admin = User::find($id);
+        $password = $request->input('password');
+        $admin->username = $request->input('username');
+        $admin->timestamps=false;
+        $admin->password = bcrypt($password);
+        $admin->save();
+        return redirect('superadmin/update-admin')->with('status', 'Username And Password Update Successfully');
     }
 }
