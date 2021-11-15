@@ -45,7 +45,7 @@ class AdminController extends Controller
         if (session()->has('username')) {
             return view('admin.admin_index', [
                 'image' => $images,
-                'logout' =>'logout',
+                'logout' => 'logout',
                 'content' => $data,
                 'post' => $post,
                 'slide_berita' => $slide_berita,
@@ -129,7 +129,7 @@ class AdminController extends Controller
         if (session()->has('username')) {
             return view('admin.header_edit', [
                 'image' => $images,
-                'logout' =>'logout',
+                'logout' => 'logout',
             ]);
         } else {
             return view('admin.login', [
@@ -143,7 +143,7 @@ class AdminController extends Controller
         $data = content_yt::find(1);
         if (session()->has('username')) {
             return view('admin.content-yt-img', [
-               'content' => $data
+                'content' => $data
             ]);
         } else {
             return view('admin.login', [
@@ -187,11 +187,10 @@ class AdminController extends Controller
         $post->slug = $request->input('slug');
         $post->excerpt = $request->input('excerpt');
         $post->body = $request->input('body');
-        if ($request->hasFile('image')) 
-        {
+        if ($request->hasFile('image')) {
             $file = $request->file('image');
             $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
+            $filename = time() . '.' . $extention;
             $file->move('template/assets/img/berita/', $filename);
             $post->image = $filename;
         }
@@ -256,7 +255,7 @@ class AdminController extends Controller
     public function berita_gambar()
     {
         $slide_berita = Berita_Gambar::all();
-        return view('admin.berita.gambar',[
+        return view('admin.berita.gambar', [
             'gambar_slide' => $slide_berita,
         ]);
     }
@@ -310,7 +309,6 @@ class AdminController extends Controller
         }
         $slide->save();
         return redirect('/superadmin/berita-gambar')->with('status', 'Slide Gambar Berita Telah Terupdate');
-        
     }
     public function contact()
     {
@@ -332,7 +330,7 @@ class AdminController extends Controller
         $contact->email = $request->input('email');
         $contact->nomer = $request->input('nomer');
         $contact->fax = $request->input('fax');
-        
+
         $contact->save();
         return redirect('superadmin/contact')->with('status', 'Contact Update Successfully');
     }
@@ -361,7 +359,7 @@ class AdminController extends Controller
         $admin = User::find($id);
         $password = $request->input('password');
         $admin->username = $request->input('username');
-        $admin->timestamps=false;
+        $admin->timestamps = false;
         $admin->password = bcrypt($password);
         $admin->save();
         return redirect('superadmin/update-admin')->with('status', 'Username And Password Update Successfully');
