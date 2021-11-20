@@ -91,7 +91,8 @@
             <br><br><br>
             {!! $isi !!}
         </article>
-        <a name="back-post" id="back-post" class="btn btn-success" href="{{ asset('/') }}" role="button">Kembali</a>
+        <a name="back-post" id="back-post" class="btn btn-success" href="{{ URL::previous() }}"
+            role="button">Kembali</a>
     </div>
     <br><br><br>
 

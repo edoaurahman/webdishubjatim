@@ -96,7 +96,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8 order-1 order-lg-2">
+                <div class="col-lg-8 order-2 order-lg-2">
                     <div class="section-title">
                         <h2>INFORMASI PENTING</h2>
                         <div class="col-lg-12 pt-4 pt-lg-0 order-2 order-lg-2 content">
@@ -115,10 +115,16 @@
                                             <td style="text-align: left"> {{ $d->judul }} <a
                                                     href="{{ asset('/berita') }}/{{ $d->judul }}">Selengkapnya...</a>
                                             </td>
+                                            <td></td>
 
                                         </tr>
                                         <?php $i++; ?>
                                     @endforeach
+                                    <tr>
+                                        <td></td>
+                                        <td><a href="/berita" class="btn btn-primary">Berita Lainnya</a></td>
+                                        <td></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
