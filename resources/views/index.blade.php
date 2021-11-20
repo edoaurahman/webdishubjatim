@@ -120,13 +120,9 @@
                                         </tr>
                                         <?php $i++; ?>
                                     @endforeach
-                                    <tr>
-                                        <td></td>
-                                        <td><a href="/berita" class="btn btn-primary">Berita Lainnya</a></td>
-                                        <td></td>
-                                    </tr>
                                 </tbody>
                             </table>
+                            <a href="/berita" class="btn btn-primary">Berita Lainnya</a>
                         </div>
                     </div>
                 </div>
