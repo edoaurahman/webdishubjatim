@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Berita_Gambar;
 use App\Models\Contact;
 use App\Models\Images;
 use App\Models\content_yt;
@@ -15,22 +14,38 @@ class HomeController extends Controller
     {
         $images = Images::find(1);
         $data = content_yt::find(1);
-        $post = Post::latest()->get();
-        $slide= Berita_Gambar::latest()->get();
+        $post = Post::latest('tgl')->get();
+        $slide_berita= Post::latest('tgl')->get();
         $contact = Contact::find(1);
         return view('index',[
             'image' => $images,
             'content' => $data,
             'post' => $post,
-            'slide_berita' => $slide,
+            'slide_berita' => $slide_berita,
             'contact' => $contact,
 
         ]);
     }
-    public function berita(Post $post)
+    public function berita($judul)
     {
-        return view('berita.post', [
-                'post' => $post,
-            ]);
+        $post = Post::where('judul' , $judul)->get();
+        return view('berita.post', compact('post'));
     }
-}
+
+    public function index_berita()
+    {
+        $images = Images::find(1);
+        $data = content_yt::find(1);
+        $post = Post::latest('tgl')->get();
+        $slide_berita= Post::latest('pict')->get();
+        $contact = Contact::find(1);
+        return view('berita.index',[
+            'image' => $images,
+            'content' => $data,
+            'post' => $post,
+            'slide_berita' => $slide_berita,
+            'contact' => $contact,
+
+        ]);
+    }
+}   

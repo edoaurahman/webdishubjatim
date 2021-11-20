@@ -39,8 +39,7 @@ class AdminController extends Controller
     {
         $images = Images::find(1);
         $data = content_yt::find(1);
-        $post = Post::latest()->get();
-        $slide_berita = Berita_Gambar::latest()->get();
+        $post = Post::all();
         $contact = Contact::find(1);
         if (session()->has('username')) {
             return view('admin.admin_index', [
@@ -48,9 +47,9 @@ class AdminController extends Controller
                 'logout' => 'logout',
                 'content' => $data,
                 'post' => $post,
-                'slide_berita' => $slide_berita,
                 'contact' => $contact,
                 'admin' => 'update-admin',
+                'title' => 'slide',
             ]);
         } else {
             return redirect('/admin');
@@ -130,6 +129,7 @@ class AdminController extends Controller
             return view('admin.header_edit', [
                 'image' => $images,
                 'logout' => 'logout',
+                'title' => 'slide',
             ]);
         } else {
             return view('admin.login', [
@@ -143,7 +143,9 @@ class AdminController extends Controller
         $data = content_yt::find(1);
         if (session()->has('username')) {
             return view('admin.content-yt-img', [
-                'content' => $data
+                'content' => $data,
+                'title' => 'Youtbe And Image',
+
             ]);
         } else {
             return view('admin.login', [
@@ -154,7 +156,7 @@ class AdminController extends Controller
 
     public function index_berita()
     {
-        $posts = Post::all();
+        $posts = Post::latest('tgl')->get();
         if (session()->has('username')) {
             return view('admin.berita.posts', [
                 'posts' => $posts,
@@ -200,10 +202,10 @@ class AdminController extends Controller
 
     public function berita(Post $post)
     {
+
+        $post->latest('tgl')->get();
         if (session()->has('username')) {
-            return view('admin.berita.post', [
-                'post' => $post,
-            ]);
+            return view('admin.berita.post', compact('post'));
         } else {
             return view('admin.login', [
                 'title' => 'Login Form'
@@ -213,10 +215,8 @@ class AdminController extends Controller
     public function update_berita(Request $request, $id)
     {
         $post = Post::find($id);
-        $post->title = $request->input('title');
-        $post->slug = $request->input('slug');
-        $post->excerpt = $request->input('excerpt');
-        $post->body = $request->input('body');
+        $post->judul = $request->input('judul');
+        $post->isi = $request->input('isi');
         if ($request->hasFile('image')) {
             $destination = 'template/assets/img/berita/' . $post->image;
             if (File::exists($destination)) {
@@ -234,11 +234,9 @@ class AdminController extends Controller
 
     public function edit_berita($id)
     {
-        $post = Post::find($id);
+        $post = Post::where('id_news',$id)->get();
         if (session()->has('username')) {
-            return view('admin.berita.edit', [
-                'post' => $post,
-            ]);
+            return view('admin.berita.edit', compact('post'));
         } else {
             return view('admin.login', [
                 'title' => 'Login Form'
@@ -252,64 +250,6 @@ class AdminController extends Controller
         return redirect('/superadmin/berita')->with('status', 'Berita Berhasil di Hapus');
     }
 
-    public function berita_gambar()
-    {
-        $slide_berita = Berita_Gambar::all();
-        return view('admin.berita.gambar', [
-            'gambar_slide' => $slide_berita,
-        ]);
-    }
-
-    // public function store_gambar_berita(Request $request)
-    // {
-    //     $img = new Berita_Gambar();
-    //     $img->header = $request->input('header');
-    //     $img->isi = $request->input('isi');
-    //     if ($request->hasFile('image')) 
-    //     {
-    //         $file = $request->file('image');
-    //         $extention = $file->getClientOriginalExtension();
-    //         $filename = time().'.'.$extention;
-    //         $file->move('template/assets/img/berita/gambar/', $filename);
-    //         $img->gambar = $filename;
-    //     }
-    //     $img->save();
-    //     return redirect('/superadmin/berita-gambar')->with('status', 'Slide Gambar Berita Telah Tersimpan');
-    // }
-
-    public function edit_gambar_berita($id)
-    {
-        $slide = Berita_Gambar::find($id);
-        if (session()->has('username')) {
-            return view('admin.berita.edit-gambar', [
-                'slide_gambar' => $slide,
-            ]);
-        } else {
-            return view('admin.login', [
-                'title' => 'Login Form'
-            ]);
-        }
-    }
-
-    public function update_gambar_berita(Request $request, $id)
-    {
-        $slide = Berita_Gambar::find($id);
-        $slide->header = $request->input('header');
-        $slide->isi = $request->input('isi');
-        if ($request->hasFile('image')) {
-            $destination = 'template/assets/img/berita/gambar/' . $slide->gambar;
-            if (File::exists($destination)) {
-                File::delete($destination);
-            }
-            $file = $request->file('image');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extention;
-            $file->move('template/assets/img/berita/gambar/', $filename);
-            $slide->gambar = $filename;
-        }
-        $slide->save();
-        return redirect('/superadmin/berita-gambar')->with('status', 'Slide Gambar Berita Telah Terupdate');
-    }
     public function contact()
     {
         $contact = Contact::find(1);

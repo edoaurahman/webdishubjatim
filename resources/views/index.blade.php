@@ -23,14 +23,9 @@
 
         </div>
     </section><!-- End About Us Section -->
-
-
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
         <div class="container">
-
-
-
             <div class="row">
                 <div class="col-lg-4 order-1 order-lg-1">
                     <div class="section-title">
@@ -48,47 +43,42 @@
                                 <div class="carousel-inner warna" role="listbox">
                                     <div class="carousel-item item-slide active">
                                         <div class="overlay-image"
-                                            style="background-image: url({{ asset('template') }}/assets/img/berita/gambar/{{ $slide_berita[0]->gambar }})">
+                                            style="background-image: url('{{ asset('template') }}/assets/img/imgnews/{{ $slide_berita[0]->pict }}')">
                                         </div>
                                         <div class="container position-image">
-                                            <h4>{{ $slide_berita[0]->header }}</h4>
-                                            <h6>{{ $slide_berita[0]->isi }}</h6>
+                                            <h6>{{ $slide_berita[0]->judul }}</h6>
                                         </div>
                                     </div>
                                     <div class="carousel-item item-slide">
                                         <div class="overlay-image"
-                                            style="background-image: url({{ asset('template') }}/assets/img/berita/gambar/{{ $slide_berita[1]->gambar }})">
+                                            style="background-image: url('{{ asset('template') }}/assets/img/imgnews/{{ $slide_berita[1]->pict }}')">
                                         </div>
                                         <div class="container position-image">
-                                            <h4>{{ $slide_berita[1]->header }}</h4>
-                                            <h6>{{ $slide_berita[1]->isi }}</h6>
+                                            <h6>{{ $slide_berita[1]->judul }}</h6>
                                         </div>
                                     </div>
                                     <div class="carousel-item item-slide ">
                                         <div class="overlay-image"
-                                            style="background-image: url({{ asset('template') }}/assets/img/berita/gambar/{{ $slide_berita[2]->gambar }})">
+                                            style="background-image: url('{{ asset('template') }}/assets/img/imgnews/{{ $slide_berita[2]->pict }}')">
                                         </div>
                                         <div class="container position-image">
-                                            <h4>{{ $slide_berita[2]->header }}</h4>
-                                            <h6>{{ $slide_berita[2]->isi }}</h6>
+                                            <h6>{{ $slide_berita[2]->judul }}</h6>
                                         </div>
                                     </div>
                                     <div class="carousel-item item-slide ">
                                         <div class="overlay-image"
-                                            style="background-image: url({{ asset('template') }}/assets/img/berita/gambar/{{ $slide_berita[3]->gambar }})">
+                                            style="background-image: url('{{ asset('template') }}/assets/img/imgnews/{{ $slide_berita[3]->pict }}')">
                                         </div>
                                         <div class="container position-image">
-                                            <h4>{{ $slide_berita[3]->header }}</h4>
-                                            <h6>{{ $slide_berita[3]->isi }}</h6>
+                                            <h6>{{ $slide_berita[3]->judul }}</h6>
                                         </div>
                                     </div>
                                     <div class="carousel-item item-slide ">
                                         <div class="overlay-image"
-                                            style="background-image: url({{ asset('template') }}/assets/img/berita/gambar/{{ $slide_berita[4]->gambar }})">
+                                            style="background-image: url('{{ asset('template') }}/assets/img/imgnews/{{ $slide_berita[4]->pict }}')">
                                         </div>
                                         <div class="container position-image">
-                                            <h4>{{ $slide_berita[4]->header }}</h4>
-                                            <h6>{{ $slide_berita[4]->isi }}</h6>
+                                            <h6>{{ $slide_berita[4]->judul }}</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -120,11 +110,10 @@
                                             break;
                                         } ?>
                                         <tr>
-                                            <td><img src="{{ asset('template/assets/img/berita/' . $d->image) }}"
+                                            <td><img src="{{ asset('template/assets/img/imgnews/' . $d->pict) }}"
                                                     width="130px" alt="..."></td>
-                                            <td style="text-align: left"><?php echo $d->title; ?> <a
-                                                    href="{{ asset('/berita') }}/{{ $d->slug }}">Lihat
-                                                    Detail...</a>
+                                            <td style="text-align: left"> {{ $d->judul }} <a
+                                                    href="{{ asset('/berita') }}/{{ $d->judul }}">Selengkapnya...</a>
                                             </td>
 
                                         </tr>

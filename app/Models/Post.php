@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
-    protected $table = 'berita';
-    protected $guarded = 'id';
+    protected $table = 'news';
+    protected $guarded = 'id_news';
+    protected $primaryKey = 'id_news';
+    public $timestamps = false;
 }

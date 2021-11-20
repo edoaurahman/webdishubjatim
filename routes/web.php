@@ -28,15 +28,13 @@ Route::put('/superadmin/content-yt-image/{id}', [AdminController::class, 'update
 Route::get('/superadmin/berita', [AdminController::class, 'index_berita']);
 Route::get('/superadmin/berita/create', [AdminController::class, 'create_berita']);
 Route::post('/superadmin/berita', [AdminController::class, 'store_berita']);
-Route::get('/superadmin/berita/{post:slug}',[AdminController::class, 'berita']);
+Route::get('/superadmin/berita/{post:judul}',[AdminController::class, 'berita']);
 Route::delete('/superadmin/berita/{post}',[AdminController::class, 'destroy']);
 
-Route::get('/berita/{post:slug}',[HomeController::class, 'berita']);
+Route::get('/berita',[HomeController::class, 'index_berita']);
+Route::get('/berita/{judul}',[HomeController::class, 'berita']);
 Route::get('/superadmin/berita/edit/{id}', [AdminController::class, 'edit_berita']);
 Route::put('/superadmin/berita/update/{id}', [AdminController::class, 'update_berita']);
-Route::get('/superadmin/berita-gambar',[AdminController::class, 'berita_gambar']);
-Route::get('/superadmin/edit-berita-gambar/{id}',[AdminController::class, 'edit_gambar_berita']);
-Route::put('/superadmin/edit-berita-gambar/{id}',[AdminController::class, 'update_gambar_berita']);
 Route::get('/superadmin/contact', [AdminController::class, 'contact']);
 Route::put('/superadmin/contact/{id}', [AdminController::class, 'update_contact']);
 
