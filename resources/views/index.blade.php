@@ -43,42 +43,42 @@
                                 <div class="carousel-inner warna" role="listbox">
                                     <div class="carousel-item item-slide active">
                                         <div class="overlay-image"
-                                            style="background-image: url('{{ asset('template') }}/assets/img/imgnews/{{ $slide_berita[0]->pict }}')">
+                                            style="background-image: url('{{ asset('template') }}/assets/img/imgnews/{{ $post[0]->pict }}')">
                                         </div>
                                         <div class="container position-image">
-                                            <h6>{{ $slide_berita[0]->judul }}</h6>
+                                            <h6>{{ $post[0]->judul }}</h6>
                                         </div>
                                     </div>
                                     <div class="carousel-item item-slide">
                                         <div class="overlay-image"
-                                            style="background-image: url('{{ asset('template') }}/assets/img/imgnews/{{ $slide_berita[1]->pict }}')">
+                                            style="background-image: url('{{ asset('template') }}/assets/img/imgnews/{{ $post[1]->pict }}')">
                                         </div>
                                         <div class="container position-image">
-                                            <h6>{{ $slide_berita[1]->judul }}</h6>
+                                            <h6>{{ $post[1]->judul }}</h6>
                                         </div>
                                     </div>
                                     <div class="carousel-item item-slide ">
                                         <div class="overlay-image"
-                                            style="background-image: url('{{ asset('template') }}/assets/img/imgnews/{{ $slide_berita[2]->pict }}')">
+                                            style="background-image: url('{{ asset('template') }}/assets/img/imgnews/{{ $post[2]->pict }}')">
                                         </div>
                                         <div class="container position-image">
-                                            <h6>{{ $slide_berita[2]->judul }}</h6>
+                                            <h6>{{ $post[2]->judul }}</h6>
                                         </div>
                                     </div>
                                     <div class="carousel-item item-slide ">
                                         <div class="overlay-image"
-                                            style="background-image: url('{{ asset('template') }}/assets/img/imgnews/{{ $slide_berita[3]->pict }}')">
+                                            style="background-image: url('{{ asset('template') }}/assets/img/imgnews/{{ $post[3]->pict }}')">
                                         </div>
                                         <div class="container position-image">
-                                            <h6>{{ $slide_berita[3]->judul }}</h6>
+                                            <h6>{{ $post[3]->judul }}</h6>
                                         </div>
                                     </div>
                                     <div class="carousel-item item-slide ">
                                         <div class="overlay-image"
-                                            style="background-image: url('{{ asset('template') }}/assets/img/imgnews/{{ $slide_berita[4]->pict }}')">
+                                            style="background-image: url('{{ asset('template') }}/assets/img/imgnews/{{ $post[4]->pict }}')">
                                         </div>
                                         <div class="container position-image">
-                                            <h6>{{ $slide_berita[4]->judul }}</h6>
+                                            <h6>{{ $post[4]->judul }}</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -122,9 +122,12 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            <a href="/berita" class="btn btn-primary">Berita Lainnya</a>
+                            <a href="/berita" class="btn btn-success position-relative">Berita Lainnya</a>
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-12 order-3 order-lg-3">
+                    <hr>
                 </div>
             </div>
         </div>
