@@ -48,6 +48,23 @@ class HomeController extends Controller
         ]);
     }
 
+    public function ppid()
+    {
+        $images = Images::find(1);
+        $data = content_yt::find(1);
+        $post = Post::latest('tgl')->get();
+        $contact = Contact::find(1);
+        return view('ppid',[
+            'image' => $images,
+            'content' => $data,
+            'post' => $post,
+            'contact' => $contact,
+            'title' => "PPID"
+
+        ]);
+    }
+
+
     public function index_berita()
     {
         $post = Post::latest('tgl')->get();

@@ -19,7 +19,7 @@
                               </li>
                               <li><a class="nav-link scrollto " href="#strukturOrganisasi">Struktur Organisasi</a>
                               </li>
-                              <li><a class="nav-link scrollto " href="#penjabatStruktural">Penjabat Struktural</a>
+                              <li><a class="nav-link scrollto " href="#pejabatStruktural">Penjabat Struktural</a>
                               </li>
                               <li><a class="nav-link scrollto " href="#pegawai">Pegawai</a></li>
                           </ul>
@@ -29,9 +29,42 @@
 
                   @elseif ($title == 'Dinas Perhubungan Provinsi Jawa Timur')
                       <li><a class="nav-link" href="/profile">Profil</a></li>
-                      <li><a class="nav-link scrollto fs-6 " href="#about">Tentang</a></li>
-                      <li><a class="nav-link scrollto fs-6 " href="#services">Berita</a></li>
-                      <li><a class="nav-link scrollto fs-6 " href="#contact">Contact</a></li>
+                      <li><a class="nav-link scrollto" href="#services">Berita</a></li>
+                      <li class="dropdown"><a href="#"><span>PPID</span> <i class="bi bi-chevron-down"></i></a>
+                          <ul>
+                              <li><a class="nav-link scrollto " href="/ppid#informasiBerkala">Informasi Berkala</a></li>
+                              <li><a class="nav-link scrollto " href="/ppid#informasiSertaMerta">Informasi Serta
+                                      Merta</a></li>
+                              <li><a class="nav-link scrollto " href="/ppid#informasiSetiapSaat">Informasi Setiap
+                                      Saat</a></li>
+                              <li><a class="nav-link scrollto " href="/ppid#prosedurPermohonanInformasi">Prosedur
+                                      Permohonan Informasi</a>
+                              </li>
+                              <li><a class="nav-link scrollto " href="/ppid#strukturOrganisasi">Struktur Organisasi</a>
+                              </li>
+                              <li><a class="nav-link scrollto " href="/ekstra">Daftar Informasi Publik</a></li>
+                              <li><a class="nav-link scrollto " href="/ppid#regulasi">Regulasi</a></li>
+                              <li><a class="nav-link scrollto " href="/ekstra">Laporan Akses Informasi</a></li>
+                          </ul>
+                      </li>
+                  @elseif ($title == 'PPID')
+                      <li class="dropdown"><a href="#"><span>PPID</span> <i class="bi bi-chevron-down"></i></a>
+                          <ul>
+                              <li><a class="nav-link scrollto " href="/ppid#informasiBerkala">Informasi Berkala</a></li>
+                              <li><a class="nav-link scrollto " href="/ppid#informasiSertaMerta">Informasi Serta
+                                      Merta</a></li>
+                              <li><a class="nav-link scrollto " href="/ppid#informasiSetiapSaat">Informasi Setiap
+                                      Saat</a></li>
+                              <li><a class="nav-link scrollto " href="/ppid#prosedurPermohonanInformasi">Prosedur
+                                      Permohonan Informasi</a>
+                              </li>
+                              <li><a class="nav-link scrollto " href="/ppid#strukturOrganisasi">Struktur Organisasi</a>
+                              </li>
+                              <li><a class="nav-link scrollto " href="/ekstra">Daftar Informasi Publik</a></li>
+                              <li><a class="nav-link scrollto " href="/ppid#regulasi">Regulasi</a></li>
+                              <li><a class="nav-link scrollto " href="/ekstra">Laporan Akses Informasi</a></li>
+                          </ul>
+                      </li>
                   @endif
                   @if (isset($admin))
                       <li><a class="nav-link scrollto fs-6 " href="{{ url('/superadmin/' . $admin) }}">Update User

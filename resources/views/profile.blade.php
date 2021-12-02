@@ -119,9 +119,9 @@
                 </div>
             </div>
 
-            {{-- PENJABAT STRUKTURAL --}}
-            <div class="section-title pt-5" id="penjabatStruktural">
-                <h2>PENJABAT STRUKTURAL</h2>
+            {{-- PEJABAT STRUKTURAL --}}
+            <div class="section-title pt-5" id="pejabatStruktural">
+                <h2>PEJABAT STRUKTURAL</h2>
             </div>
 
             <div class="row">
