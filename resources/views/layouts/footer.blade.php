@@ -4,7 +4,8 @@
           <h3>MEDSOS DISHUB JATIM</h3>
           <p>Di Kelola Oleh Sekretariat Dinas Perhubungan Provinsi Jawa Timur
               Jl. Ahmad Yani No. 268 Surabaya Tlp. (031) 8292276, 8291530, Fax. (031) 8292012
-              Email: dishubllajjatim@gmail.com</p>
+              Email: dishubllajjatim@gmail.com
+          </p>
           <div class="social-links">
               <a href="https://twitter.com/dishubjatim" class="twitter"><i class="bx bxl-twitter"></i></a>
               <a href="https://www.facebook.com/dishubjawatimur/" class="facebook"><i

@@ -1,32 +1,35 @@
 @extends('layouts.main')
-@section('title', 'Profil Dinas Perhubungan Provinsi Jawa Timur')
 @section('content')
-    <section id="profile" class="about">
+    <section class="about">
         <div class="container">
             {{-- VISI DAN MISI --}}
-            <div class="section-title pt-5">
+            <div class="section-title pt-5" id="visiMisi">
                 <h2>VISI DAN MISI</h2>
             </div>
-
             <div class="row">
-                <div class="col-lg-12 pt-4 pt-lg-0 order-2 order-lg-1 content">
-                    <h3 class="text-center">Sesuai dengan arahan Gubernur, Visi - Misi Dinas Perhubungan dan seluruh OPD
+                <div class="col-lg-12 pt-4 content">
+                    <h3 class="text-center">Sesuai dengan arahan Gubernur, Visi - Misi Dinas Perhubungan dan seluruh
+                        OPD
                         di Jawa Timur
                         menggunakan Visi - Misi Pemerintah Provinsi Jawa Timur.
                     </h3>
 
                     <ul class="mt-5">
-                        <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                        <li><i class="bi bi-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.
+                        <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </li>
+                        <li><i class="bi bi-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate
+                            velit.
                         </li>
                         <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.
                             Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu
                             fugiat nulla pariatur.</li>
                     </ul>
                     <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                        in
                         voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident,
                         sunt in
                         culpa qui officia deserunt mollit anim id est laborum
                     </p>
@@ -34,14 +37,15 @@
             </div>
 
             {{-- TUGAS DAN FUNGSI --}}
-            <div class="section-title pt-5">
+            <div class="section-title pt-5" id="tugasFungsi">
                 <h2>TUGAS DAN FUNGSI</h2>
             </div>
 
             <div class="row">
-                <div class="col-lg-12 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                <div class="col-lg-12 pt-4 content">
                     <p>
-                        Tugas dan Fungsi dari Dinas Perhubungan Provinsi Jawa Timur tercantum dalam Peraturan Gubernur Jawa
+                        Tugas dan Fungsi dari Dinas Perhubungan Provinsi Jawa Timur tercantum dalam Peraturan Gubernur
+                        Jawa
                         Timur No 77 Tahun 2016 BAB III Pasal 4 ayat (1) dan (2). Tugas dan Fungsi tersebut antara lain :
                     </p>
 
@@ -62,7 +66,8 @@
                             <li>B. pelaksanaan kebijakan di bidang perhubungan;</li>
                             <li>C. pelaksanaan evaluasi dan pelaporan di bidang perhubungan;</li>
                             <li>D. pelaksanaan administrasi Dinas di bidang perhubungan dan</li>
-                            <li>E. pelaksanaan fungsi lain yang diberikan oleh Gubernur terkait dengan tugas dan fungsinya
+                            <li>E. pelaksanaan fungsi lain yang diberikan oleh Gubernur terkait dengan tugas dan
+                                fungsinya
                             </li>
                         </ul>
                         </p>
@@ -72,17 +77,18 @@
             </div>
 
             {{-- KEDUDUKAN DAN ALAMAT --}}
-            <div class="section-title pt-5">
+            <div class="section-title pt-5" id="kedudukanAlamat">
                 <h2>KEDUDUKAN DAN ALAMAT</h2>
             </div>
 
             <div class="row">
-                <div class="col-lg-12 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                <div class="col-lg-12 pt-4 content">
                     <div class="container">
                         <h4>Kedudukan :</h4>
 
                         <p class="ms-2">
-                            Dinas Perhubungan merupakan unsur pelaksana otonomi daerah, dipimpin oleh seorang kepala dinas,
+                            Dinas Perhubungan merupakan unsur pelaksana otonomi daerah, dipimpin oleh seorang kepala
+                            dinas,
                             yang berada di bawah dan bertanggung jawab kepada Gubernur melalui Sekretaris Daerah.
                         </p>
 
@@ -100,12 +106,12 @@
             </div>
 
             {{-- STRUKTUR ORGANISASI --}}
-            <div class="section-title pt-5">
+            <div class="section-title pt-5" id="strukturOrganisasi">
                 <h2>STRUKTUR ORGANISASI</h2>
             </div>
 
             <div class="row">
-                <div class="col-lg-12 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                <div class="col-lg-12 pt-4 content">
                     <div class="container">
                         <img class="img-fluid mx-auto d-block "
                             src="{{ asset('template/assets/img/Struktur_dishub.jpg') }}" alt="">
@@ -114,12 +120,12 @@
             </div>
 
             {{-- PENJABAT STRUKTURAL --}}
-            <div class="section-title pt-5">
+            <div class="section-title pt-5" id="penjabatStruktural">
                 <h2>PENJABAT STRUKTURAL</h2>
             </div>
 
             <div class="row">
-                <div class="col-lg-12 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                <div class="col-lg-12 pt-4 content">
                     <h3>Di Lingkungan Dinas Perhubungan Provinsi Jawa Timur</h3>
                     <h3>Data Juni 2021</h3>
                     <div class="container">
@@ -523,16 +529,17 @@
             </div>
 
             {{-- PEGAWAI --}}
-            <div class="section-title pt-5">
+            <div class="section-title pt-5" id="pegawai">
                 <h2>PEGAWAI</h2>
             </div>
 
             <div class="row">
-                <div class="col-lg-12 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                <div class="col-lg-12 pt-4 content">
                     <div class="container">
                         <div>
                             <p style="text-align: center;"><strong>DATA JUMLAH ASN <br>(JUNI 2021)</strong></p>
-                            <p style="text-align: center;"><strong>GRAFIK JUMLAH PEGAWAI BERDASARKAN PANGKAT</strong></p>
+                            <p style="text-align: center;"><strong>GRAFIK JUMLAH PEGAWAI BERDASARKAN PANGKAT</strong>
+                            </p>
                             <p><img class="img-fluid mx-auto d-block"
                                     src="{{ asset('template/assets/img/grafik pangkat.jpg') }}" alt="" width="736"
                                     height="429"></p>
@@ -546,9 +553,6 @@
 
                 </div>
             </div>
-
-
-
         </div>
     </section>
 @endsection

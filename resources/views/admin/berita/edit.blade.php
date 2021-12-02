@@ -5,8 +5,10 @@
     @foreach ($post as $p)
         @php
             $judul = $p->judul;
+            $subjudul = $p->subjudul;
             $isi = $p->isi;
             $img = $p->pict;
+            $tgl = $p->tgl;
             $id = $p->id_news;
             
         @endphp
@@ -25,7 +27,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-11">
 
 
                     <div class="card-body">
@@ -38,13 +40,22 @@
                                 <input type="text" name="judul" value="{{ $judul }}" class="form-control">
                             </div>
                             <div class="form-group mb-3">
+                                <label for="">Sub Judul</label>
+                                <input type="text" name="subjudul" value="{{ $subjudul }}" class="form-control">
+                            </div>
+                            <div class="form-group mb-3 w-25">
+                                <label for="">Tanggal</label>
+                                <input type="date" name="tgl" value="{{ $tgl }}" class=" form-control">
+                            </div>
+                            <div class="form-group mb-3">
                                 <label for="">Isi Berita</label>
-                                <input type="text" name="isi" id="summernote">
+                                <textarea type="text" name="isi" id="summernote"></textarea>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="">Gambar</label>
                                 <input type="file" name="image" class="form-control">
-                                <img src="{{ asset('template/assets/img/imgnews/' . $img) }}" width="300px" alt="">
+                                <img class="mt-2" src="{{ asset('template/assets/img/imgnews/' . $img) }}"
+                                    width="300px" alt="">
                             </div>
                             <div class="form-group mb-3">
                                 <button type="submit" class="btn btn-primary">Simpan</button>

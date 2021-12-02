@@ -185,24 +185,28 @@ class AdminController extends Controller
     public function store_berita(Request $request)
     {
         $post = new Post();
-        $post->title = $request->input('title');
-        $post->slug = $request->input('slug');
-        $post->excerpt = $request->input('excerpt');
-        $post->body = $request->input('body');
+        $post->judul = $request->judul;
+        $post->isi = $request->isi;
+        $post->subjudul = $request->subjudul;
+        $post->tgl = $request->tgl;
         if ($request->hasFile('image')) {
+            $destination = 'template/assets/img/imgnews/' . $post->image;
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
             $file = $request->file('image');
             $extention = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extention;
-            $file->move('template/assets/img/berita/', $filename);
-            $post->image = $filename;
+            $file->move('template/assets/img/imgnews/', $filename);
+            $post->pict = $filename;
         }
         $post->save();
-        return redirect('superadmin/berita/create')->with('status', 'Berita Telah Tersimpan');
+
+        return redirect('superadmin/berita')->with('status', 'Berita Telah Tersimpan');
     }
 
     public function berita(Post $post)
-    {
-
+    {   
         $post->latest('tgl')->get();
         if (session()->has('username')) {
             return view('admin.berita.post', compact('post'));
@@ -215,18 +219,20 @@ class AdminController extends Controller
     public function update_berita(Request $request, $id)
     {
         $post = Post::find($id);
-        $post->judul = $request->input('judul');
-        $post->isi = $request->input('isi');
+        $post->judul = $request->judul;
+        $post->isi = $request->isi;
+        $post->subjudul = $request->subjudul;
+        $post->tgl = $request->tgl;
         if ($request->hasFile('image')) {
-            $destination = 'template/assets/img/berita/' . $post->image;
+            $destination = 'template/assets/img/imgnews/' . $post->image;
             if (File::exists($destination)) {
                 File::delete($destination);
             }
             $file = $request->file('image');
             $extention = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extention;
-            $file->move('template/assets/img/berita/', $filename);
-            $post->image = $filename;
+            $file->move('template/assets/img/imgnews/', $filename);
+            $post->pict = $filename;
         }
         $post->save();
         return redirect('superadmin/berita')->with('status', 'Berita Berhasil Di Update');
@@ -246,7 +252,7 @@ class AdminController extends Controller
 
     public function destroy(Post $post)
     {
-        Post::destroy($post->id);
+        Post::destroy($post->id_news);
         return redirect('/superadmin/berita')->with('status', 'Berita Berhasil di Hapus');
     }
 

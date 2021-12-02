@@ -8,13 +8,34 @@
 
           <nav id="navbar" class="navbar">
               <ul>
-                  <li><a class="nav-link scrollto" href="/">Home</a></li>
-                  <li><a class="nav-link " href="/profile">Profil</a></li>
-                  <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
-                  <li><a class="nav-link scrollto" href="#services">Berita</a></li>
-                  <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                  <li><a class="nav-link" href="/">Home</a></li>
+                  @if ($title == 'Profile Dinas Perhubungan Provinsi Jawa Timur')
+
+                      <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
+                          <ul>
+                              <li><a class="nav-link scrollto " href="#visiMisi">Visi dan Misi</a></li>
+                              <li><a class="nav-link scrollto " href="#tugasFungsi">Tugas dan Fungsi</a></li>
+                              <li><a class="nav-link scrollto " href="#kedudukanAlamat">Kedudukan dan Alamat</a>
+                              </li>
+                              <li><a class="nav-link scrollto " href="#strukturOrganisasi">Struktur Organisasi</a>
+                              </li>
+                              <li><a class="nav-link scrollto " href="#penjabatStruktural">Penjabat Struktural</a>
+                              </li>
+                              <li><a class="nav-link scrollto " href="#pegawai">Pegawai</a></li>
+                          </ul>
+                      </li>
+
+
+
+                  @elseif ($title == 'Dinas Perhubungan Provinsi Jawa Timur')
+                      <li><a class="nav-link" href="/profile">Profil</a></li>
+                      <li><a class="nav-link scrollto fs-6 " href="#about">Tentang</a></li>
+                      <li><a class="nav-link scrollto fs-6 " href="#services">Berita</a></li>
+                      <li><a class="nav-link scrollto fs-6 " href="#contact">Contact</a></li>
+                  @endif
                   @if (isset($admin))
-                      <li><a class="nav-link scrollto" href="{{ url('/superadmin/' . $admin) }}">Update User dan
+                      <li><a class="nav-link scrollto fs-6 " href="{{ url('/superadmin/' . $admin) }}">Update User
+                              dan
                               Pass</a>
                       </li>
                   @endif
