@@ -30,6 +30,17 @@
                   @elseif ($title == 'Dinas Perhubungan Provinsi Jawa Timur')
                       <li><a class="nav-link" href="/profile">Profil</a></li>
                       <li><a class="nav-link scrollto" href="#services">Berita</a></li>
+                      <li class="dropdown"><a href="#"><span>SAKIP</span> <i class="bi bi-chevron-down"></i></a>
+                          <ul>
+                              <li><a class="nav-link scrollto " href="/ekstra#informasiBerkala">RENSTRA</a>
+                              </li>
+                              <li><a class="nav-link scrollto " href="/ekstra/IKU-2019-2024">IKU 2019-2024</a></li>
+                              <li><a class="nav-link scrollto " href="/ekstra/IKU-2014-2019">IKU 2014-2019</a></li>
+                              <li><a class="nav-link scrollto " href="/ekstra/LKJIP2020">LKJIP 2020</a></li>
+                              <li><a class="nav-link scrollto " href="/ekstra/LKJIP2019">LKJIP 2019</a></li>
+
+                          </ul>
+                      </li>
                       <li class="dropdown"><a href="#"><span>PPID</span> <i class="bi bi-chevron-down"></i></a>
                           <ul>
                               <li><a class="nav-link scrollto " href="/ppid#informasiBerkala">Informasi Berkala</a></li>

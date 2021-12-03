@@ -34,6 +34,7 @@ Route::delete('/superadmin/berita/{post}',[AdminController::class, 'destroy']);
 Route::get('/berita',[HomeController::class, 'index_berita']);
 Route::get('/profile',[HomeController::class, 'profile']);
 Route::get('/ppid',[HomeController::class, 'ppid']);
+Route::get('/ekstra/{sakip}',[HomeController::class, 'ekstra']);
 Route::get('/berita/{judul}',[HomeController::class, 'berita']);
 Route::get('/superadmin/berita/edit/{id}', [AdminController::class, 'edit_berita']);
 Route::put('/superadmin/berita/update/{id}', [AdminController::class, 'update_berita']);

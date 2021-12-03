@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="template/assets/img/icon.png" rel="icon">
-    <link href="template/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="{{ asset('template') }}/assets/img/icon.png" rel="icon">
+    <link href="{{ asset('template') }}/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
@@ -19,15 +19,15 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="template/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="template/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="template/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="template/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="template/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="template/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="{{ asset('template') }}/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="{{ asset('template') }}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('template') }}/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="{{ asset('template') }}/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="{{ asset('template') }}/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="{{ asset('template') }}/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="template/assets/css/style.css" rel="stylesheet">
+    <link href="{{ asset('template') }}/assets/css/style.css" rel="stylesheet">
 
     <!-- =======================================================
   * Template Name: Green - v4.3.0
@@ -48,14 +48,14 @@
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-    <script src="template/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="template/assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="template/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="template/assets/vendor/php-email-form/validate.js"></script>
-    <script src="template/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="{{ asset('template') }}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('template') }}/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="{{ asset('template') }}/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="{{ asset('template') }}/assets/vendor/php-email-form/validate.js"></script>
+    <script src="{{ asset('template') }}/assets/vendor/swiper/swiper-bundle.min.js"></script>
 
     <!-- Template Main JS File -->
-    <script src="template/assets/js/main.js"></script>
+    <script src="{{ asset('template') }}/assets/js/main.js"></script>
 
 </body>
 

@@ -1,5 +1,7 @@
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="{{ $title === 'Profile Dinas Perhubungan Provinsi Jawa Timur' ? 'd-none' : '' }}">>
+<section id="hero" class="
+{{ !isset($header) ? 'd-none' : '' }}
+">
     <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
         <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>

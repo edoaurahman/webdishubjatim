@@ -21,6 +21,7 @@ class HomeController extends Controller
             'content' => $data,
             'post' => $post,
             'contact' => $contact,
+            'header' => "true",
             'title' => "Dinas Perhubungan Provinsi Jawa Timur"
 
 
@@ -62,6 +63,37 @@ class HomeController extends Controller
             'title' => "PPID"
 
         ]);
+    }
+
+    public function ekstra($sakip)
+    {   
+        $images = Images::find(1);
+        $post = Post::latest('tgl')->get();
+        if ($sakip == "IKU-2019-2024"){
+            return view('ekstra.iku-2019-2024',[
+            'image' => $images,
+            'post' => $post,
+            'title' => "SAKIP"
+            ]);
+        }elseif($sakip == "IKU-2014-2019"){
+            return view('ekstra.iku-2014-2019',[
+                'image' => $images,
+                'post' => $post,
+                'title' => "SAKIP"
+                ]);
+        }elseif($sakip == "LKJIP2020"){
+            return view('ekstra.lkjip2020',[
+                'image' => $images,
+                'post' => $post,
+                'title' => "SAKIP"
+                ]);
+        }elseif($sakip == "LKJIP2019"){
+            return view('ekstra.lkjip2019',[
+                'image' => $images,
+                'post' => $post,
+                'title' => "SAKIP"
+                ]);
+        }       
     }
 
 
