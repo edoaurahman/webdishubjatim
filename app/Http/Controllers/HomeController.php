@@ -93,7 +93,13 @@ class HomeController extends Controller
                 'post' => $post,
                 'title' => "SAKIP"
                 ]);
-        }       
+        }elseif($sakip == "RENSTRA"){
+            return view('ekstra.renstra',[
+                'image' => $images,
+                'post' => $post,
+                'title' => "SAKIP"
+                ]);
+        }    
     }
 
 

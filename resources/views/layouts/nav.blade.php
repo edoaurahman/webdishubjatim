@@ -32,7 +32,7 @@
                       <li><a class="nav-link scrollto" href="#services">Berita</a></li>
                       <li class="dropdown"><a href="#"><span>SAKIP</span> <i class="bi bi-chevron-down"></i></a>
                           <ul>
-                              <li><a class="nav-link scrollto " href="/ekstra#informasiBerkala">RENSTRA</a>
+                              <li><a class="nav-link scrollto " href="/ekstra/RENSTRA">RENSTRA</a>
                               </li>
                               <li><a class="nav-link scrollto " href="/ekstra/IKU-2019-2024">IKU 2019-2024</a></li>
                               <li><a class="nav-link scrollto " href="/ekstra/IKU-2014-2019">IKU 2014-2019</a></li>
