@@ -215,7 +215,6 @@ class AdminController extends Controller
     public function update_berita(Request $request, $id)
     {
         $post = Post::find($id);
-        unlink('template/assets/img/imgnews/'.$post->pict);
         $post->judul = $request->judul;
         $post->isi = $request->isi;
         $post->subjudul = $request->subjudul;
@@ -242,7 +241,7 @@ class AdminController extends Controller
             return view('admin.berita.edit', compact('post'));
         } else {
             return view('admin.login', [
-                'title' => 'Login Form'
+                'title' => 'Login Form',
             ]);
         }
     }

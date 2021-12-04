@@ -3,5 +3,4 @@
 
     {{-- update slider --}}
     @include('admin.slide')
-
 @endsection

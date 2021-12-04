@@ -49,22 +49,38 @@
                         <li class="nav-item">
                             <a href="{{ url('/superadmin') }}"
                                 class="nav-link {{ request()->is('superadmin') ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-image nav-icon"></i>
                                 <p>Slide Header</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ url('/superadmin/content-yt-image') }}"
                                 class="nav-link {{ request()->is('superadmin/content-yt-image') ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-plus-square nav-icon"></i>
                                 <p>Youtube And Image</p>
                             </a>
                         </li>
+
+                        @if (isset($post->judul))
+                            <li class="nav-item">
+                                <a href="{{ url('/superadmin/berita') }}" class="nav-link active">
+                                    <i class="fas fa-book nav-icon"></i>
+                                    <p>Berita</p>
+                                </a>
+                            </li>
+                        @else
+                            <li class="nav-item">
+                                <a href="{{ url('/superadmin/berita') }}" class="nav-link">
+                                    <i class="fas fa-book nav-icon"></i>
+                                    <p>Berita</p>
+                                </a>
+                            </li>
+                        @endif
+
                         <li class="nav-item">
-                            <a href="{{ url('/superadmin/berita') }}"
-                                class="nav-link {{ request()->is('superadmin/berita') ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Berita</p>
+                            <a href="{{ url('/logout') }}" class="nav-link">
+                                <i class="nav-icon fas fa-columns text-danger"></i>
+                                <p class="text">Logout</p>
                             </a>
                         </li>
                     </ul>
