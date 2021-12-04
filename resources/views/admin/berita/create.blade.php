@@ -30,7 +30,7 @@
                             </div>
                             <div class="form-group mb-3 w-25">
                                 <label for="">Tanggal</label>
-                                <input type="date" name="tgl" class=" form-control">
+                                <input type="date" name="tgl" value="{{ date('Y-m-d') }}" class=" form-control">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="">Isi Berita</label>

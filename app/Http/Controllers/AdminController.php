@@ -190,13 +190,9 @@ class AdminController extends Controller
         $post->subjudul = $request->subjudul;
         $post->tgl = $request->tgl;
         if ($request->hasFile('image')) {
-            $destination = 'template/assets/img/imgnews/' . $post->image;
-            if (File::exists($destination)) {
-                File::delete($destination);
-            }
             $file = $request->file('image');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extention;
+            $name = $file->getClientOriginalName();
+            $filename = $name;
             $file->move('template/assets/img/imgnews/', $filename);
             $post->pict = $filename;
         }
@@ -219,18 +215,19 @@ class AdminController extends Controller
     public function update_berita(Request $request, $id)
     {
         $post = Post::find($id);
+        unlink('template/assets/img/imgnews/'.$post->pict);
         $post->judul = $request->judul;
         $post->isi = $request->isi;
         $post->subjudul = $request->subjudul;
         $post->tgl = $request->tgl;
         if ($request->hasFile('image')) {
-            $destination = 'template/assets/img/imgnews/' . $post->image;
+            $destination = 'template/assets/img/imgnews/' . $post->pict;
             if (File::exists($destination)) {
                 File::delete($destination);
             }
             $file = $request->file('image');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extention;
+            $name = $file->getClientOriginalName();
+            $filename = $name;
             $file->move('template/assets/img/imgnews/', $filename);
             $post->pict = $filename;
         }
@@ -253,7 +250,7 @@ class AdminController extends Controller
     public function destroy(Post $post)
     {
         Post::destroy($post->id_news);
-        unlink('template/assets/img/imgnews/'.$post->pict);
+        File::delete('template/assets/img/imgnews/'. $post->pict);
         return redirect('/superadmin/berita')->with('status', 'Berita Berhasil di Hapus');
     }
 
