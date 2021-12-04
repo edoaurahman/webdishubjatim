@@ -253,6 +253,7 @@ class AdminController extends Controller
     public function destroy(Post $post)
     {
         Post::destroy($post->id_news);
+        unlink('template/assets/img/imgnews/'.$post->pict);
         return redirect('/superadmin/berita')->with('status', 'Berita Berhasil di Hapus');
     }
 
